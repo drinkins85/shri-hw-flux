@@ -1,11 +1,9 @@
-export default function ($, store, actions) {
-  const logContainer = $.createElement('div');
-  const log = $.createElement('div');
-  log.classList.add('log');
+import createElement from '../utils/createElement';
 
-  const clearBtn = $.createElement('button');
-  clearBtn.classList.add('log-list__clear');
-  clearBtn.innerHTML = 'Очистить';
+export default function (store, actions) {
+  const logContainer = createElement('div', '');
+  const log = createElement('div', '', 'log');
+  const clearBtn = createElement('button', 'Очистить', 'log-list__clear');
 
   clearBtn.addEventListener('click', () => {
     actions.log.clear(store);

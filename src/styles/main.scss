@@ -67,6 +67,8 @@ body {
   line-height: 28px;
   min-height: 48px;
   box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .log {
