@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 
 const prodConfig = require('./webpack.production');
@@ -84,6 +85,10 @@ const common = {
     new ExtractTextPlugin({
       filename: 'css/style.css',
       publicPath: PATHS.build,
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      inject: false,
     }),
   ],
 };
